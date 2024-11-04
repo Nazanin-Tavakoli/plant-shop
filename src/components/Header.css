@@ -106,7 +106,10 @@
   }
   .shop-now {
     background-color: #ff5a5f;
+    width: 150px;
+    height: 50px;
     color: white;
+    font-weight: bold;
     padding: 10px 20px;
     border: none;
     border-radius: 40px;

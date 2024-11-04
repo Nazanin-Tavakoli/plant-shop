@@ -1,4 +1,5 @@
 import React from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import './Products.css';
 
 const products = [
@@ -66,6 +67,15 @@ const products = [
 ];
 
 function Products() {
+  const renderStars = (stars) => {
+    const starIcons = [];
+    for (let i = 0; i < 5; i++) {
+      starIcons.push(
+        <i key={i} className={i < stars ? 'fas fa-star' : 'far fa-star'}></i>
+      );
+    }
+    return starIcons;
+  };
   return (
     <section className="products">
       {products.map((product, index) => (
@@ -74,9 +84,18 @@ function Products() {
           <div className="product-info">
             <h3>{product.name}</h3>
             <p>{product.type}</p>
-            <p>Stars: {product.stars}</p>
-            <p>Price: ${product.price}</p>
-            {product.offPrice && <p>Off Price: ${product.offPrice}</p>}
+            <div className="stars">
+              {renderStars(product.stars)}
+            </div> 
+            <p className="price">
+              {product.offPrice ? (
+                <>
+                  <span className="original-price">${product.price}</span> <span className="discounted-price">${product.offPrice}</span>
+                </>
+              ) : (
+                <span>${product.price}</span>
+              )}
+            </p>           
           </div>
         </div>
       ))}

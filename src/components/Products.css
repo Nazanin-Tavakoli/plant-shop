@@ -7,7 +7,7 @@
 }
 
 .product-card {
-  border: 1px solid #ddd;
+  border: 1px  #ddd;
   border-radius: 5px;
   overflow: hidden;
   margin: 7px;
@@ -37,4 +37,21 @@
 .product-info p {
   margin: 5px 0;
   color: #555;
+}
+.stars i {
+  color: #ffcc00;
+  margin-right: 2px;
+}
+.price {
+  font-size: 1em;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+
+.discounted-price {
+  color: rgb(56, 52, 52);
 }
