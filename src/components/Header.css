@@ -1,41 +1,65 @@
 .header {
+   
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     background-color: #f8f8f8;
+    padding-left: 40px;
+    padding-right: 40px;
+    
   }
   
   .logo {
     display: flex;
     align-items: center;
   }
-  
-  .logo img {
-    height: 20px;
-    width: auto;
-    margin-right: 10px;
+  .logo span {
+    font-weight: bold; 
+  font-size: 18px;
   }
+  .logo img {
+    height: 50px;
+    width: 70px;
+  }
+  
+  nav {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+
+}
+
   
   nav a {
     margin: 0 15px;
     text-decoration: none;
     color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    
   }
-  
+  nav a:hover {
+    color: #ff5a5f;
+}
   .cart {
     display: flex;
     align-items: center;
+    font-size: 16px;
+    color: #333;
+    position: relative;
+
   }
   
   .cart-icon {
     position: relative;
     margin-left: 5px;
+    font-size: 24px;
   }
   
   .cart-count {
     position: absolute;
-    top: -5px;
+    top: -10px;
     right: -10px;
     background-color: red;
     color: white;
@@ -43,15 +67,22 @@
     padding: 2px 6px;
     font-size: 12px;
     font-weight: bold;
+    line-height: 1;
   }
   
-  /* استایل‌های سکشن هیرو */
   .hero {
+    position: relative;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items:center;
+    height: 70vh; 
+    background-image: url('/public/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    
     padding: 50px;
-    background-color: #f1f3f3;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
   }
   
   .hero-content {
@@ -66,23 +97,23 @@
   .hero-content h1 {
     font-size: 40px;
     margin: 10px 0;
+    text-align:center;
+    line-height: 1.2;
   }
-  
+  h1 span {
+    display: block;
+    margin-top: 10px; 
+  }
   .shop-now {
     background-color: #ff5a5f;
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 40px;
     cursor: pointer;
   }
-  
-  .hero-image {
-    width: 40%;
-    height: 100%;
-    background-image: url('https://link-to-your-image.com/image.jpg'); 
-    background-size: cover;
-    background-position: center;
-    border-radius: 0 0 0 50px;
+  .shop-now:hover{
+    background-color: palegreen;
   }
+  
   

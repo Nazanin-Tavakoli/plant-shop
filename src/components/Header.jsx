@@ -15,7 +15,7 @@ function Header() {
           <a href="#">Contact Us</a>
           <div className="cart">
             <span>$44.00</span>
-            <span className="cart-icon"></span>
+            <span className="cart-icon">🛒</span>
             <span className="cart-count">2</span>
           </div>
         </nav>
@@ -24,10 +24,12 @@ function Header() {
       <section className="hero">
         <div className="hero-content">
           <h2>Best Quality Plants</h2>
-          <h1>Amazing Variety Of Plants Starting Just $12</h1>
+          <h1>Amazing Variety
+            <span>Of Plants Starting</span> Just $12</h1>
           <button className="shop-now">Shop Now</button>
         </div>
-        <div className="hero-image"></div>
+        <div className="hero-image">
+        </div>
       </section>
     </div>
   );
