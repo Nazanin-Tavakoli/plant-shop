@@ -1,7 +1,9 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './Header.css';
 
 function Header() {
+  const cart = useSelector(state => state.cart); 
   return (
     <div>
       <header className="header">
@@ -13,11 +15,12 @@ function Header() {
           <a href="#">Home</a>
           <a href="#">About Us</a>
           <a href="#">Contact Us</a>
+         
           <div className="cart">
-            <span>$44.00</span>
-            <span className="cart-icon">🛒</span>
-            <span className="cart-count">2</span>
-          </div>
+             <span>${cart.totalPrice.toFixed(2)}</span>
+              <span className="cart-icon">🛒</span>
+               <span className="cart-count">{cart.items.length}</span>
+                </div>
         </nav>
       </header>
 

@@ -18,7 +18,21 @@
 .product-card:hover {
   transform: scale(1.05);
 }
-
+.product-image { position: relative; }
+.add-to-cart { 
+display: none;
+position: absolute;
+bottom: 10px;
+left: 50%;
+transform: translateX(-50%);
+ background-color: #28a745;
+ color: white;
+ border: none;
+ padding: 10px 20px;
+ cursor: pointer;
+ border-radius:
+ 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); }
+.product-card:hover .add-to-cart { display: block; }
 .product-card img {
   width: 100%;
   height: auto;
@@ -55,3 +69,5 @@
 .discounted-price {
   color: rgb(56, 52, 52);
 }
+
+.notification { position: fixed; bottom: 20px; right: 20px; background-color: #28a745; color: white; padding: 10px 20px; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); z-index: 1000; }

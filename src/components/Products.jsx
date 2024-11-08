@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../actions/cartActions';
 import './Products.css';
 
 const products = [
@@ -67,6 +69,9 @@ const products = [
 ];
 
 function Products() {
+  const dispatch = useDispatch();
+   const cart = useSelector(state => state.cart);
+   const [notification, setNotification] = useState(null);
   const renderStars = (stars) => {
     const starIcons = [];
     for (let i = 0; i < 5; i++) {
@@ -76,11 +81,18 @@ function Products() {
     }
     return starIcons;
   };
+  
+  const handleAddToCart = (product) => { dispatch(addToCart(product));
+    setNotification(`${product.name} added to basket shop!`); setTimeout(() => { setNotification(null); }, 3000); };
   return (
     <section className="products">
+      {notification && <div className="notification">{notification}</div>}
       {products.map((product, index) => (
         <div key={index} className="product-card">
+          <div className="product-image">
           <img src={product.src} alt={product.name} />
+          <button className="add-to-cart" onClick={() => handleAddToCart(product)}> <i className="fas fa-shopping-cart"></i> Add to Cart </button>
+          </div>
           <div className="product-info">
             <h3>{product.name}</h3>
             <p>{product.type}</p>
@@ -95,7 +107,7 @@ function Products() {
               ) : (
                 <span>${product.price}</span>
               )}
-            </p>           
+            </p>  
           </div>
         </div>
       ))}
